@@ -27,8 +27,12 @@ export class Pokemon{
     attack(target: Pokemon, attack: number, isHit: boolean): void {
         if (isHit) {
             const damage = Math.floor(Math.floor(Math.floor(2 * this.level / 5 + 2) * this.attackList[attack].power * this.power / target.defStat) / 50) + 2;
+            console.log(`${this.name} attack ${target.name} for ${damage}`);
             target.hp -= damage;
+            console.log(`${target.name} has ${target.hp}`);
+            return;
         }
+        console.log(`${this.name} miss its attack`);
     }
 
     checkHit(attack: Attack): boolean{
