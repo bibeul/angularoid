@@ -2,7 +2,7 @@ import {Pokemon} from "./Pokemon";
 import {getRandomInt} from "./utils";
 
 export class Battle{
-    static intervalId: number;
+    static intervalId: NodeJS.Timeout;
 
     static fightFirst(pok1: Pokemon, pok2: Pokemon): Pokemon[] {
         if(pok1.speed > pok2.speed){
@@ -33,7 +33,7 @@ export class Battle{
                     clearInterval(Battle.intervalId);
                     return;
                 }
-            }, 500 ,pok1, pok2);
+            }, 1 ,pok1, pok2);
         })
     }
 }

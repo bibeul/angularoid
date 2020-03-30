@@ -8,26 +8,15 @@ describe('Test Battle.ts', () => {
     const salamech: Pokemon = new Pokemon("salamech", 65, 52, 39, 1, 43, attacks, "fire");
     const draco: Pokemon = new Pokemon("dracofeu", 70, 84, 61, 2, 65, attacks, "dragon");
 
+    test('Battle should get salamech', async () => {
+        expect(await Battle.simulateFight(salamech, pika)).toEqual(pika);
+    });
+
     test('should pick pikachu', () => {
-        expect(Battle.fightFirst(pika, draco)).toBe(pika);
+        expect(Battle.fightFirst(pika, draco)).toEqual([pika, draco]);
     });
 
     test('should pick pika', () => {
-        expect(Battle.fightFirst(pika, salamech)).toBe(pika);
-    });
-
-    test('salamech should get minus 200 hp', () => {
-        draco.attack(salamech, 0, true);
-        expect(salamech.hp).toBe(34);
-    });
-
-    test('pika should get minus 80 hp', () => {
-        salamech.attack(pika, 0, true);
-        expect(pika.hp).toBe(31);
-    });
-
-    test('pika should get minus 80 hp', () => {
-        salamech.attack(pika, 0, false);
-        expect(pika.hp).toBe(31);
+        expect(Battle.fightFirst(pika, salamech)).toEqual([pika, salamech]);
     });
 });
