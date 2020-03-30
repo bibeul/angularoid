@@ -8,7 +8,7 @@ describe('Test Battle.ts', () => {
     const salamech: Pokemon = new Pokemon("salamech", 65, 52, 39, 1, 43, attacks, "fire");
     const draco: Pokemon = new Pokemon("dracofeu", 70, 84, 61, 2, 65, attacks, "dragon");
 
-    test('Battle should get salamech', async () => {
+    test('Battle should get salamech as winner', async () => {
         expect(await Battle.simulateFight(salamech, pika)).toEqual(pika);
     });
 
