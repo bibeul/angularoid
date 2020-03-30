@@ -33,7 +33,7 @@ export class Battle{
                     clearInterval(Battle.intervalId);
                     return;
                 }
-            }, 500 ,pok1, pok2);
+            }, 500);
         })
     }
 }
