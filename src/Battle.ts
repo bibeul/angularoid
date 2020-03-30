@@ -1,8 +1,5 @@
 import {Pokemon} from "./Pokemon";
-
-function getRandomInt(max: number): number {
-    return Math.floor(Math.random() * Math.floor(max));
-}
+import {getRandomInt} from "./utils";
 
 export class Battle{
     static fightFirst(pok1: Pokemon, pok2: Pokemon): Pokemon {
